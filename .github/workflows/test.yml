@@ -15,14 +15,21 @@ jobs:
         run: go build -v ./...
       - name: Test
         run: go test -v ./...
-
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.17
       - name: Lint
         run: go vet ./...
+
+      - name: Slack Notification on Success
+        if: success()
+        uses: rtCamp/action-slack-notify@v2.0.2
+        env:
+          SLACK_CHANNEL: github-actions通知
+          SLACK_TITLE: Test Success
+          SLACK_COLOR: good
+
+      - name: Slack Notification on Failure
+        uses: rtCamp/action-slack-notify@v2.0.2
+        if: failure()
+        env:
+          SLACK_CHANNEL: github-actions通知
+          SLACK_TITLE: Test Failure
+          SLACK_COLOR: danger
