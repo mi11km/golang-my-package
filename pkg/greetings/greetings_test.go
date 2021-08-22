@@ -5,17 +5,17 @@ import "testing"
 func TestHello(t *testing.T) {
 	tests := []struct {
 		name     string
-		arg     string
+		arg      string
 		expected string
 	}{
 		{
 			name:     "default",
-			arg:     "Mike",
+			arg:      "Mike",
 			expected: "Hi, Mike. Welcome!",
 		},
 		{
 			name:     "empty string",
-			arg:     "",
+			arg:      "",
 			expected: "Hi, . Welcome!",
 		},
 	}
