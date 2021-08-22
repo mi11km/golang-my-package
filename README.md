@@ -8,3 +8,8 @@ Go で色々書いたものを残していくレポジトリ
 ```shell
 docker-compose run --rm app <command> 
 ```
+- テスト・フォーマット
+```shell
+docker-compose run --rm app go fmt ./...
+docker-compose run --rm app go test ./... -v
+```
