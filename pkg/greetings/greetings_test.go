@@ -11,7 +11,7 @@ func TestHello(t *testing.T) {
 		{
 			name:     "default",
 			arg:      "Mike",
-			expected: "Hi, Mike. Welcome!",
+			expected: "Hi, Mike. Welcome",
 		},
 		{
 			name:     "empty string",
@@ -22,7 +22,7 @@ func TestHello(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got, err := Hello(tt.arg); got != tt.expected || err == nil {
+			if got, _ := Hello(tt.arg); got != tt.expected {
 				t.Errorf("got: %s, want %s", got, tt.expected)
 			}
 		})
