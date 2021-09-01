@@ -33,3 +33,41 @@ func delete(slice []int, pos int) []int {
 	slice = append(slice[:pos], slice[pos+1:]...)
 	return slice
 }
+
+func f(n int) int {
+	if n == 0 || n == 1 {
+		return n
+	}
+	return f(n-1) + f(n-2)
+}
+
+func fNew(n int) int {
+	memo := make([]int, 1000)
+	memo[0], memo[1] = 0, 1
+	return fm(n, memo)
+}
+
+func fm(n int, memo []int) int {
+	if n == 0 || n == 1 {
+		return n
+	}
+	if memo[n] == 0 {
+		memo[n] = fm(n-1, memo) + fm(n-2, memo)
+	}
+	return memo[n]
+}
+
+func fd(n int) int {
+	if n == 0 || n == 1 {
+		return n
+	}
+	a := 0
+	b := 1
+	c := 1
+	for i := 2; i <= n; i++ {
+		c = a + b
+		a = b
+		b = c
+	}
+	return c
+}
