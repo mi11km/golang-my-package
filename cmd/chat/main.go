@@ -1,14 +1,15 @@
 package main
 
 import (
-	"app/pkg/chat"
-	"app/pkg/chat/middleware"
-	"app/pkg/chat/templates"
-	"app/pkg/chat/trace"
 	"flag"
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/mi11km/playground/pkg/chat"
+	"github.com/mi11km/playground/pkg/chat/middleware"
+	"github.com/mi11km/playground/pkg/chat/templates"
+	"github.com/mi11km/playground/pkg/chat/trace"
 )
 
 func main() {

@@ -83,7 +83,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 					Value: encodedUserInfo,
 					Path:  "/",
 				})
-				http.Redirect(w, r, "http://localhost:3000/chat", http.StatusTemporaryRedirect)  // todo url可変にする
+				http.Redirect(w, r, "http://localhost:3000/chat", http.StatusTemporaryRedirect) // todo url可変にする
 			}
 		default:
 			w.WriteHeader(http.StatusNotFound)

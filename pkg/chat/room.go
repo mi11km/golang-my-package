@@ -1,12 +1,12 @@
 package chat
 
 import (
-	"app/pkg/chat/middleware"
-	"app/pkg/chat/trace"
 	"log"
 	"net/http"
 
 	"github.com/gorilla/websocket"
+	"github.com/mi11km/playground/pkg/chat/middleware"
+	"github.com/mi11km/playground/pkg/chat/trace"
 )
 
 type room struct {

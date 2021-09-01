@@ -1,12 +1,13 @@
 package templates
 
 import (
-	"app/pkg/chat/middleware"
 	"log"
 	"net/http"
 	"path/filepath"
 	"sync"
 	"text/template"
+
+	"github.com/mi11km/playground/pkg/chat/middleware"
 )
 
 type TemplateHandler struct {
