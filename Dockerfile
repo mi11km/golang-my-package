@@ -1,4 +1,4 @@
-FROM golang:1.17-alpine as dev
+FROM golang:1.18-alpine as dev
 WORKDIR /go/src/app
 RUN apk add --no-cache gcc musl-dev
 COPY go.mod .
